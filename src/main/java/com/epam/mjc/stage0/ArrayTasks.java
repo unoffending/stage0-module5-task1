@@ -11,7 +11,8 @@ public class ArrayTasks {
      * Return a String[] array that will list all the seasons of the year, starting with winter.
      */
     public String[] seasonsArray() {
-
+    String [] seasons = new String [] { "winter", "spring", "summer", "fall"};
+    return seasons;
     }
 
     /**
@@ -25,7 +26,12 @@ public class ArrayTasks {
      * length = 5  -> [1, 2, 3, 4, 5]
      */
     public int[] generateNumbers(int length) {
-
+    int [] a;
+    a = new int[length];
+    for(int i = 0; i < length; i++) {
+       a [i] = i + 1;
+    }
+    return a;
     }
 
     /**
@@ -37,7 +43,12 @@ public class ArrayTasks {
      * arr = [5, -3, -4] -> sum = -2
      */
     public int totalSum(int[] arr) {
-
+    int length = arr.length;
+    int c = 0;
+    for(int i = 0; i < length; i++) {
+        c += arr[i];
+    }
+    return c;
     }
 
     /**
@@ -50,7 +61,14 @@ public class ArrayTasks {
      * arr = [5, -3, -4],   number = 10    ->  -1
      */
     public int findIndexOfNumber(int[] arr, int number) {
-
+    int length = arr.length;
+    int a = 0;
+    for(int i = 0; i < length; i++) {
+        if(arr[i] == number) {
+            a = i;
+        }
+    }
+    return a;
     }
 
     /**
@@ -63,7 +81,16 @@ public class ArrayTasks {
      * arr = ["pineapple", "apple", "pen"] -> ["pen", "apple", "pineapple"]
      */
     public String[] reverseArray(String[] arr) {
-
+    int length = arr.length;
+        String [] reverse;
+        reverse = new String [length];
+        int l = length;
+        int change = length - 1;
+        for(int i = 0; i < l; i++) {
+            reverse[i] = arr[change];
+            change--;
+        }
+        return reverse;
     }
 
     /**
@@ -78,7 +105,17 @@ public class ArrayTasks {
      * arr = [1, 2]         -> [1, 2]
      */
     public int[] getOnlyPositiveNumbers(int[] arr) {
-
+    int length = arr.length;
+        int [] positive;
+        positive = new int[length];
+        int j = 0;
+        for(int i = 0; i < length; i++) {
+            if(arr[i] > 0) {
+                positive[j] = arr[i];
+                j++;
+            }
+        }
+        return positive;
     }
 
     /**
