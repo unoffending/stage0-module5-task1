@@ -128,8 +128,50 @@ public class ArrayTasks {
      * arr = [[3, 1, 2,], [3,2]] -> [[2, 3], [1, 2, 3]]
      * arr = [[5, 4], [7]]       -> [[7], [4, 5]]
      */
-    /* public int[][] sortRaggedArray(int[][] arr) {
-        
+    public int[][] sortRaggedArray(int[][] arr) {
+        bubbleSort(arr);
+        for(var row : arr) {
+            bubbleSort(row);
+        }
+        return arr;
     }
-    */
+    public static void bubbleSort(int[][]arr) {
+        int i, j;
+        int[] temp;
+        boolean swaped;
+        for(i = 0; i < arr.length - 1; i++) {
+            swaped = false;
+            for(j = 0; j < arr.length - i - 1; j++) {
+                if(arr[j].length > arr[j+1].length) {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swaped = true;
+                }
+            }
+            if(!swaped) {
+                break;
+            }
+        }
+    }
+    
+    public static void bubbleSort(int[]arr) {
+        int i, j, temp;
+        boolean swaped;
+        for(i = 0; i < arr.length - 1; i++) {
+            swaped = false;
+            for(j = 0; j < arr.length - i - 1; j++) {
+                if(arr[j] > arr[j + 1]) {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swaped = true;
+                }
+            }
+            if (!swaped) {
+                break;
+            }
+        }
+    }
+    
 }
